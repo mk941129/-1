@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>門司港レトロさんぽ手帖</title>
+<meta name="description" content="門司港駅とその周辺を、駅舎の見どころから焼きカレー、モデルコースまで、個人の感想を交えて紹介する観光案内ページ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#efe7d2;
+    --bg-elevated:#fbf6ea;
+    --bg-elevated-2:#f4ecd9;
+    --ink:#23201b;
+    --ink-soft:#5b5347;
+    --green:#2b4436;
+    --green-deep:#1b2e23;
+    --gold:#a97a2f;
+    --gold-soft:#c99f52;
+    --terracotta:#a8492f;
+    --navy:#1e3140;
+    --rule: rgba(43,68,54,0.28);
+    --shadow: rgba(30,25,15,0.16);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#101c25;
+      --bg-elevated:#152430;
+      --bg-elevated-2:#1a2c39;
+      --ink:#ece3cd;
+      --ink-soft:#b6ab90;
+      --green:#7fb397;
+      --green-deep:#a9d0b9;
+      --gold:#e0b563;
+      --gold-soft:#f0d28e;
+      --terracotta:#dd8c65;
+      --navy:#8fb3cc;
+      --rule: rgba(224,181,99,0.3);
+      --shadow: rgba(0,0,0,0.45);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#101c25;
+    --bg-elevated:#152430;
+    --bg-elevated-2:#1a2c39;
+    --ink:#ece3cd;
+    --ink-soft:#b6ab90;
+    --green:#7fb397;
+    --green-deep:#a9d0b9;
+    --gold:#e0b563;
+    --gold-soft:#f0d28e;
+    --terracotta:#dd8c65;
+    --navy:#8fb3cc;
+    --rule: rgba(224,181,99,0.3);
+    --shadow: rgba(0,0,0,0.45);
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+    font-weight:400;
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,h4{
+    font-family:"Shippori Mincho", "Hiragino Mincho ProN", serif;
+    font-weight:700;
+    color:var(--ink);
+    text-wrap:balance;
+    margin:0;
+  }
+
+  .en-label{
+    font-family:"Cormorant Garamond", "Shippori Mincho", serif;
+    font-style:italic;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-size:0.8rem;
+  }
+
+  a{color:var(--green);}
+
+  .wrap{
+    max-width:1040px;
+    margin:0 auto;
+    padding:0 clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  /* ---------- NAV ---------- */
+  .site-nav{
+    position:sticky; top:0; z-index:50;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--rule);
+  }
+  .site-nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:64px;
+    max-width:1040px;
+  }
+  .brand{
+    font-family:"Shippori Mincho", serif;
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.05em;
+    white-space:nowrap;
+  }
+  .brand small{
+    display:block;
+    font-family:"Cormorant Garamond", serif;
+    font-style:italic;
+    font-weight:500;
+    letter-spacing:0.18em;
+    font-size:0.62rem;
+    color:var(--gold);
+    text-transform:uppercase;
+  }
+  .nav-links{
+    display:flex; gap:clamp(0.8rem,2vw,1.6rem);
+    list-style:none; margin:0; padding:0;
+    font-size:0.84rem;
+    overflow-x:auto;
+    scrollbar-width:none;
+  }
+  .nav-links::-webkit-scrollbar{display:none;}
+  .nav-links a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    white-space:nowrap;
+    padding:0.3rem 0;
+    border-bottom:1px solid transparent;
+    transition:color .2s ease, border-color .2s ease;
+  }
+  .nav-links a:hover{ color:var(--green); border-color:var(--gold);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:clamp(3rem,8vw,5.5rem) 0 0;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap:2rem;
+    align-items:center;
+  }
+  @media (max-width: 780px){
+    .hero .wrap{ grid-template-columns:1fr; }
+  }
+  .hero-eyebrow{
+    display:flex; align-items:center; gap:0.75rem;
+    margin-bottom:1.1rem;
+  }
+  .hero-eyebrow .line{ width:2.4rem; height:1px; background:var(--gold); }
+  .hero h1{
+    font-size:clamp(2.1rem, 5vw, 3.1rem);
+    line-height:1.35;
+    margin-bottom:1.1rem;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--green);
+    display:block;
+    font-size:0.55em;
+    letter-spacing:0.08em;
+    margin-top:0.4rem;
+  }
+  .hero p.lead{
+    color:var(--ink-soft);
+    font-size:1.02rem;
+    max-width:34em;
+  }
+  .hero-figure{ position:relative; }
+  .hero-figure svg{ width:100%; height:auto; display:block; }
+
+  .scallop{
+    height:14px;
+    width:100%;
+    background-image: radial-gradient(circle at 7px 0, transparent 7px, var(--bg-elevated) 7.5px);
+    background-size:14px 14px;
+    background-position: 0 -7px;
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{ padding:clamp(3.4rem,7vw,5.5rem) 0; }
+  .section-head{
+    display:flex; align-items:baseline; gap:1rem;
+    margin-bottom:2.4rem;
+    border-bottom:1px solid var(--rule);
+    padding-bottom:1.1rem;
+  }
+  .section-head .num{
+    font-family:"Cormorant Garamond", serif;
+    font-style:italic;
+    color:var(--gold);
+    font-size:1.4rem;
+  }
+  .section-head h2{ font-size:clamp(1.5rem,3vw,1.9rem); }
+  .section-head .en-label{ margin-left:auto; }
+
+  .lede{
+    color:var(--ink-soft);
+    max-width:38em;
+    margin-bottom:2rem;
+  }
+
+  .opine{
+    position:relative;
+    background:var(--bg-elevated-2);
+    border-left:3px solid var(--gold);
+    padding:0.9rem 1.2rem;
+    margin-top:0.9rem;
+    font-size:0.94rem;
+    border-radius:0 6px 6px 0;
+  }
+  .opine .tag{
+    display:inline-block;
+    font-family:"Cormorant Garamond", serif;
+    font-style:italic;
+    color:var(--gold);
+    font-size:0.8rem;
+    margin-right:0.4em;
+    letter-spacing:0.05em;
+  }
+
+  /* alternating tinted band */
+  .band{ background:var(--bg-elevated); }
+
+  /* ---------- STATION FEATURE ---------- */
+  .station-feature{
+    display:grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap:clamp(1.8rem,4vw,3rem);
+    align-items:start;
+  }
+  @media (max-width:780px){ .station-feature{ grid-template-columns:1fr; } }
+  .station-feature figure{ margin:0; }
+  .station-feature svg{ width:100%; height:auto; }
+  .facts{
+    list-style:none; margin:1.4rem 0 0; padding:0;
+    display:grid; gap:0.55rem;
+    font-size:0.9rem;
+    color:var(--ink-soft);
+  }
+  .facts li{ display:flex; gap:0.6em; }
+  .facts b{ color:var(--ink); font-weight:600; min-width:6.2em; }
+
+  /* ---------- SPOT CARDS ---------- */
+  .spot-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:1.6rem;
+  }
+  .card{
+    background:var(--bg-elevated);
+    border:1px solid var(--rule);
+    border-radius:10px;
+    padding:1.5rem 1.5rem 1.6rem;
+    box-shadow:0 10px 24px -18px var(--shadow);
+    display:flex; flex-direction:column;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{ transform:translateY(-3px); box-shadow:0 16px 30px -16px var(--shadow); }
+  .card-icon{
+    width:44px; height:44px;
+    color:var(--green);
+    margin-bottom:0.9rem;
+  }
+  .card-icon svg{ width:100%; height:100%; }
+  .card h3{
+    font-size:1.12rem;
+    margin-bottom:0.15rem;
+  }
+  .card .era{
+    display:block;
+    font-family:"Cormorant Garamond", serif;
+    font-style:italic;
+    color:var(--gold);
+    font-size:0.8rem;
+    margin-bottom:0.7rem;
+  }
+  .card p{ margin:0; font-size:0.92rem; color:var(--ink-soft); }
+  .card .opine{ margin-top:auto; padding-top:0.9rem; }
+
+  /* ---------- FOOD ---------- */
+  .food-block{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:clamp(1.8rem,4vw,3rem);
+    align-items:center;
+  }
+  @media (max-width:780px){ .food-block{ grid-template-columns:1fr; } }
+  .food-block svg{ width:100%; max-width:340px; height:auto; margin:0 auto; display:block; }
+  .food-tips{
+    list-style:none; margin:1.2rem 0 0; padding:0;
+    display:grid; gap:0.7rem;
+  }
+  .food-tips li{
+    display:grid; grid-template-columns:1.6rem 1fr; gap:0.6rem;
+    font-size:0.92rem; color:var(--ink-soft);
+  }
+  .food-tips li::before{
+    content:"◆";
+    color:var(--gold);
+    font-size:0.6rem;
+    line-height:2.1;
+  }
+
+  /* ---------- ROUTE ---------- */
+  .route{
+    position:relative;
+    display:grid;
+    gap:0;
+  }
+  .route-item{
+    display:grid;
+    grid-template-columns:3rem 1fr;
+    gap:1.1rem;
+    position:relative;
+    padding-bottom:2.1rem;
+  }
+  .route-item:last-child{ padding-bottom:0; }
+  .route-marker{
+    position:relative;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .route-marker .dot{
+    width:2.2rem; height:2.2rem;
+    border-radius:50%;
+    background:var(--green);
+    color:var(--bg-elevated);
+    display:flex; align-items:center; justify-content:center;
+    font-family:"Cormorant Garamond", serif;
+    font-weight:600; font-style:italic;
+    font-size:1rem;
+    z-index:2;
+    box-shadow:0 0 0 4px var(--bg);
+  }
+  .route-item:not(:last-child) .route-marker::after{
+    content:"";
+    position:absolute;
+    top:2.2rem; bottom:-2.1rem;
+    width:1px;
+    background:var(--rule);
+    left:50%; transform:translateX(-50%);
+  }
+  .route-body{ padding-top:0.15rem; }
+  .route-body .time{
+    font-family:"Cormorant Garamond", serif;
+    font-style:italic;
+    color:var(--gold);
+    font-size:0.85rem;
+  }
+  .route-body h4{ font-size:1.05rem; margin:0.15rem 0 0.4rem; }
+  .route-body p{ margin:0; color:var(--ink-soft); font-size:0.92rem; }
+
+  /* ---------- ACCESS ---------- */
+  .access-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:1.4rem;
+  }
+  .access-card{
+    border:1px solid var(--rule);
+    border-radius:10px;
+    padding:1.3rem 1.4rem;
+    background:var(--bg-elevated);
+  }
+  .access-card .en-label{ display:block; margin-bottom:0.5rem; }
+  .access-card p{ margin:0; font-size:0.92rem; color:var(--ink-soft); }
+  .note{
+    margin-top:1.6rem;
+    font-size:0.84rem;
+    color:var(--ink-soft);
+    border-top:1px dashed var(--rule);
+    padding-top:1rem;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--green-deep);
+    color:var(--bg-elevated);
+    padding:clamp(2.6rem,6vw,3.6rem) 0 2rem;
+  }
+  :root:not([data-theme="light"]) footer, :root[data-theme="dark"] footer{
+    background:#0a141a;
+  }
+  footer .wrap{
+    display:flex; flex-direction:column; gap:1.1rem;
+  }
+  footer h3{ color:var(--gold-soft); font-size:1.2rem; }
+  footer p{ color:color-mix(in srgb, var(--bg-elevated) 78%, transparent); font-size:0.92rem; max-width:40em; }
+  footer .sign{
+    font-family:"Cormorant Garamond", serif;
+    font-style:italic;
+    color:var(--gold-soft);
+    font-size:0.85rem;
+    margin-top:0.6rem;
+  }
+
+  .reveal{
+    opacity:0; transform:translateY(14px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .reveal.is-visible{ opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <div class="brand">門司港レトロさんぽ手帖<small>Mojiko Port, Kitakyushu</small></div>
+    <ul class="nav-links">
+      <li><a href="#station">駅舎</a></li>
+      <li><a href="#spots">みどころ</a></li>
+      <li><a href="#food">食べる</a></li>
+      <li><a href="#course">モデルコース</a></li>
+      <li><a href="#access">アクセス</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="hero-eyebrow"><span class="line"></span><span class="en-label">Kanmon Strait &middot; Fukuoka</span></div>
+      <h1>港の玄関口で、<br>大正時代に出会う。<em>門司港駅、はじまりの散歩</em></h1>
+      <p class="lead">
+        関門海峡を望む北九州・門司港。白亜の駅舎を起点に、洋館やバナナの叩き売りの記憶が今も路地に残るこの港町を、
+        建築好きの筆者が実際に歩いた感想つきで紹介します。観光ガイドというより、個人的な「お気に入りメモ」だと思って読んでください。
+      </p>
+    </div>
+    <div class="hero-figure" aria-hidden="true">
+      <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="門司港駅舎のイラスト">
+        <defs>
+          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="var(--navy)" stop-opacity="0.15"/>
+            <stop offset="1" stop-color="var(--navy)" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="480" height="230" fill="url(#skyGrad)"/>
+        <!-- gulls -->
+        <path d="M60 55 q8 -10 16 0 q8 -10 16 0" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+        <path d="M370 40 q7 -9 14 0 q7 -9 14 0" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+        <!-- station facade -->
+        <g stroke="var(--green)" stroke-width="2.4" fill="none" stroke-linejoin="round">
+          <rect x="70" y="150" width="340" height="110" fill="var(--bg-elevated)"/>
+          <rect x="70" y="150" width="340" height="14" fill="none"/>
+          <polygon points="205,105 275,105 292,150 188,150" fill="var(--bg-elevated)"/>
+          <line x1="205" y1="105" x2="275" y2="105"/>
+          <!-- columns -->
+          <line x1="120" y1="160" x2="120" y2="250"/>
+          <line x1="150" y1="160" x2="150" y2="250"/>
+          <line x1="330" y1="160" x2="330" y2="250"/>
+          <line x1="360" y1="160" x2="360" y2="250"/>
+          <!-- central arch -->
+          <path d="M215 250 v-45 a25 25 0 0 1 50 0 v45" fill="var(--bg)"/>
+          <!-- windows -->
+          <rect x="95" y="185" width="20" height="34" fill="var(--bg)"/>
+          <rect x="365" y="185" width="20" height="34" fill="var(--bg)"/>
+          <rect x="170" y="185" width="18" height="30" fill="var(--bg)"/>
+          <rect x="292" y="185" width="18" height="30" fill="var(--bg)"/>
+          <!-- roof line accents -->
+          <line x1="70" y1="150" x2="188" y2="150"/>
+          <line x1="292" y1="150" x2="410" y2="150"/>
+        </g>
+        <g fill="var(--terracotta)" opacity="0.85">
+          <rect x="70" y="146" width="340" height="4"/>
+          <polygon points="205,105 275,105 279,111 201,111"/>
+        </g>
+        <!-- clock -->
+        <circle cx="240" cy="128" r="9" fill="var(--bg-elevated)" stroke="var(--gold)" stroke-width="2"/>
+        <line x1="240" y1="128" x2="240" y2="122" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="240" y1="128" x2="244" y2="128" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round"/>
+        <!-- ground / strait -->
+        <path d="M0 300 Q 60 285 120 300 T 240 300 T 360 300 T 480 300 V360 H0 Z" fill="var(--navy)" opacity="0.85"/>
+        <path d="M0 315 Q 60 302 120 315 T 240 315 T 360 315 T 480 315 V360 H0 Z" fill="var(--navy)" opacity="0.55"/>
+        <path d="M40 262 h400" stroke="var(--rule)" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ 駅舎 ============ -->
+<section id="station">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">01</span>
+      <h2>駅舎の話</h2>
+      <span class="en-label">Mojiko Station</span>
+    </div>
+    <div class="station-feature reveal">
+      <figure aria-hidden="true">
+        <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="var(--green)" stroke-width="2" fill="none">
+            <rect x="30" y="80" width="240" height="150" fill="var(--bg-elevated)"/>
+            <polygon points="115,50 185,50 200,80 100,80" fill="var(--bg-elevated)"/>
+            <line x1="115" y1="50" x2="185" y2="50"/>
+            <line x1="60" y1="90" x2="60" y2="220"/>
+            <line x1="85" y1="90" x2="85" y2="220"/>
+            <line x1="215" y1="90" x2="215" y2="220"/>
+            <line x1="240" y1="90" x2="240" y2="220"/>
+            <path d="M130 220 v-38 a20 20 0 0 1 40 0 v38" fill="var(--bg)"/>
+            <rect x="45" y="110" width="16" height="26" fill="var(--bg)"/>
+            <rect x="239" y="110" width="16" height="26" fill="var(--bg)"/>
+          </g>
+          <circle cx="150" cy="68" r="7" fill="var(--bg-elevated)" stroke="var(--gold)" stroke-width="1.6"/>
+          <rect x="0" y="230" width="300" height="30" fill="var(--bg-elevated-2)"/>
+          <text x="150" y="249" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-size="12" fill="var(--gold)">MOJIKO 1914</text>
+        </svg>
+      </figure>
+      <div>
+        <p>
+          門司港駅は1914年(大正3年)開業。左右対称に伸びる白い外壁とネオ・ルネサンス様式の意匠を持つ木造二階建ての駅舎で、
+          1988年に鉄道駅としては全国で初めて国の重要文化財に指定されました。2012年から始まった保存修理工事は2019年に完了し、
+          創建当時に近い姿へと復原されています。
+        </p>
+        <p>
+          駅舎内には「幸福の泉」と呼ばれる噴水や、大正期の意匠を残す洗面所、旧貴賓室なども残されていて、
+          ただの通過駅ではなく、それ自体が展示物のような場所になっています。
+        </p>
+        <div class="opine">
+          <span class="tag">私見</span>個人的に一番好きなのは、改札を出てすぐ振り返ったときの、木の質感が残る天井と柱の組み方です。
+          写真だと平面的な「白い洋館」に見えがちですが、実際に建物の中に立つと、木造ならではの温度みたいなものを感じます。
+          正直、ヨーロッパの駅を真似た建物というより、日本の大工が「洋風建築をどう解釈したか」の記録として見るほうがおもしろいと思っています。
+        </div>
+        <ul class="facts">
+          <li><b>開業</b><span>1914年(大正3年)</span></li>
+          <li><b>文化財指定</b><span>1988年、駅舎として全国初の国指定重要文化財</span></li>
+          <li><b>保存修理</b><span>2012〜2019年、創建当時の姿へ復原</span></li>
+          <li><b>様式</b><span>木造2階建て・ネオルネサンス様式</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ みどころ ============ -->
+<section id="spots" class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">02</span>
+      <h2>まわりのみどころ</h2>
+      <span class="en-label">Around the Port</span>
+    </div>
+    <p class="lede">駅を出て徒歩10分圏内に、大正〜昭和初期の建物や海峡沿いの施設がまとまっています。順番に迷ったら、まず海側に出て歩くのが個人的なおすすめです。</p>
+
+    <div class="spot-grid">
+
+      <article class="card reveal">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+            <rect x="8" y="20" width="32" height="20"/>
+            <polygon points="10,20 24,10 38,20"/>
+            <rect x="20" y="28" width="8" height="12"/>
+            <line x1="13" y1="26" x2="13" y2="34"/>
+            <line x1="35" y1="26" x2="35" y2="34"/>
+          </g></svg>
+        </div>
+        <h3>旧門司三井倶楽部</h3>
+        <span class="era">1921年 &middot; 木造ハーフティンバー様式</span>
+        <p>三井物産の社交倶楽部として建てられた洋館。1922年にはアインシュタインが来日時に宿泊し、当時の部屋が記念室として公開されています。1階はレストラン。</p>
+        <div class="opine"><span class="tag">私見</span>2階の展示室は空いていることが多く、駅前の喧騒からいったん離れたいときにちょうどいい規模だと思います。</div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+            <rect x="10" y="18" width="28" height="22"/>
+            <circle cx="24" cy="14" r="5"/>
+            <line x1="24" y1="9" x2="24" y2="4"/>
+            <line x1="16" y1="24" x2="16" y2="34"/>
+            <line x1="24" y1="24" x2="24" y2="34"/>
+            <line x1="32" y1="24" x2="32" y2="34"/>
+          </g></svg>
+        </div>
+        <h3>旧大阪商船</h3>
+        <span class="era">1917年 &middot; 八角形の塔屋が目印</span>
+        <p>かつて大阪商船(現・商船三井)のオレンジ色の建物。船会社の待合所として使われ、現在はギャラリーや観光案内の機能を持っています。</p>
+        <div class="opine"><span class="tag">私見</span>朝の斜めの光が当たる時間帯の外観がいちばん映えると感じます。塔屋の丸窓を見上げるアングルがお気に入りです。</div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+            <rect x="12" y="10" width="24" height="30"/>
+            <line x1="17" y1="16" x2="31" y2="16"/>
+            <line x1="17" y1="22" x2="31" y2="22"/>
+            <line x1="17" y1="28" x2="31" y2="28"/>
+            <line x1="17" y1="34" x2="31" y2="34"/>
+          </g></svg>
+        </div>
+        <h3>国際友好記念図書館</h3>
+        <span class="era">旧大連ロシア極東地方総督府の複製建築</span>
+        <p>姉妹都市・大連にあった建物を再現した施設。1階は図書館、2階はヨーロッパ料理のレストランになっています。</p>
+        <div class="opine"><span class="tag">私見</span>「複製建築」と聞くと少し身構えますが、外観の左右非対称なつくりは実際に歩いて角度を変えると発見が多く、通り過ぎるだけではもったいない建物です。</div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+            <path d="M6 30 Q 16 18 24 30 Q 32 18 42 30"/>
+            <line x1="6" y1="30" x2="6" y2="36"/>
+            <line x1="42" y1="30" x2="42" y2="36"/>
+            <line x1="6" y1="36" x2="42" y2="36"/>
+          </g></svg>
+        </div>
+        <h3>ブルーウィングもじ</h3>
+        <span class="era">日本最大級の歩行者専用はね橋</span>
+        <p>1日数回、橋桁が跳ね上がる可動橋。開閉の時間はあらかじめ決まっていて、跳ね上がる瞬間を橋のたもとで見物する人も多いスポットです。</p>
+        <div class="opine"><span class="tag">私見</span>開閉時刻を事前に調べてから行動するかどうかで満足度がかなり変わります。渡るだけなら数分ですが、開閉を待つ時間込みで散歩の「間」として楽しむのが好きです。</div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+            <rect x="18" y="6" width="12" height="34"/>
+            <ellipse cx="24" cy="6" rx="6" ry="3"/>
+            <line x1="12" y1="40" x2="36" y2="40"/>
+            <path d="M8 30 h8 M32 30 h8" stroke-dasharray="2 3"/>
+          </g></svg>
+        </div>
+        <h3>門司港レトロ展望室</h3>
+        <span class="era">黒川紀章設計 &middot; 高層マンション最上階の展望室</span>
+        <p>関門海峡と対岸の下関、行き交う船を見下ろせる展望フロア。夕方から夜にかけては港の灯りも見えてきます。</p>
+        <div class="opine"><span class="tag">私見</span>正直、施設としては規模が大きいわけではありません。それでも海峡を通る船の航跡を眺めていると時間を忘れるので、個人的には夕暮れどきに一度だけ上がる価値はあると思っています。</div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+            <ellipse cx="24" cy="30" rx="18" ry="6"/>
+            <path d="M6 30 V22 Q24 14 42 22 V30"/>
+            <line x1="24" y1="14" x2="24" y2="6"/>
+            <line x1="24" y1="6" x2="30" y2="8"/>
+          </g></svg>
+        </div>
+        <h3>関門海峡ミュージアム</h3>
+        <span class="era">海峡ドラマシップ</span>
+        <p>関門海峡の歴史や海運を紹介する体験型ミュージアム。館内に再現された昭和初期の門司港の街並みも見どころです。</p>
+        <div class="opine"><span class="tag">私見</span>屋外の建物めぐりで疲れたときの休憩と学び直しを兼ねて立ち寄るのにちょうどいい場所です。雨の日の代替プランとしても覚えておくと安心。</div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+            <path d="M10 24 h28"/>
+            <path d="M10 24 a4 4 0 0 1 0 -8 h28 a4 4 0 0 1 0 8"/>
+            <path d="M10 24 a4 4 0 0 0 0 8 h28 a4 4 0 0 0 0 -8"/>
+          </g></svg>
+        </div>
+        <h3>関門トンネル人道</h3>
+        <span class="era">徒歩で本州へ渡れる海底トンネル</span>
+        <p>関門トンネルの中には車道と別に人道(歩行者用通路)があり、無料で歩いて福岡県から山口県まで海底を渡れます。所要時間は片道15分ほど。</p>
+        <div class="opine"><span class="tag">私見</span>景色があるわけではないのですが、「海の下を歩いて県境を越える」という体験自体がおもしろく、一度はやってみてほしい寄り道です。県境の線をまたいで記念撮影する人をよく見かけます。</div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+            <path d="M14 34 Q 10 20 22 12 Q 30 8 34 14 Q 24 16 20 26 Q 26 22 32 24"/>
+          </g></svg>
+        </div>
+        <h3>バナナの叩き売り発祥の地</h3>
+        <span class="era">港町の商いの記憶</span>
+        <p>台湾からの輸入バナナが痛む前に威勢よく口上を述べながら売りさばいた「バナナの叩き売り」発祥の地とされ、記念碑が立っています。イベント時には実演が行われることもあります。</p>
+        <div class="opine"><span class="tag">私見</span>観光地化された洋館群の中で、ここだけ商人の町としての泥臭さが顔を出す場所で、個人的にはこのギャップが門司港らしさだと思っています。</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 食べる ============ -->
+<section id="food">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">03</span>
+      <h2>食べる:焼きカレー</h2>
+      <span class="en-label">Baked Curry</span>
+    </div>
+    <div class="food-block">
+      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <ellipse cx="150" cy="190" rx="110" ry="26" fill="var(--bg-elevated-2)" stroke="var(--rule)"/>
+        <path d="M60 190 a90 55 0 0 1 180 0" fill="var(--terracotta)" opacity="0.9"/>
+        <path d="M70 186 q80 -34 160 0" fill="none" stroke="var(--gold)" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+        <path d="M90 178 q60 -22 120 0" fill="none" stroke="var(--gold-soft)" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+        <path d="M55 190 Q150 150 245 190" fill="none" stroke="var(--ink-soft)" stroke-width="1.5" opacity="0.4"/>
+        <g stroke="var(--ink)" stroke-width="2" fill="none" opacity="0.7">
+          <line x1="80" y1="150" x2="80" y2="128"/>
+          <line x1="86" y1="150" x2="88" y2="126"/>
+          <line x1="92" y1="150" x2="96" y2="128"/>
+        </g>
+      </svg>
+      <div>
+        <p>
+          洋食文化が根づいた港町らしく、門司港はご飯にカレーソースをかけてチーズをのせ、オーブンで焼き上げる「焼きカレー」の発祥地とされています。
+          洋食レストランのまかない料理が起源という説もあり、店によって粘度も辛さもチーズの量もかなり違います。
+        </p>
+        <ul class="food-tips">
+          <li>生卵やチーズの絡み方、ご飯の炒め方は店ごとに個性が出るので、1軒で判断せず数軒食べ比べるのが個人的な楽しみ方です。</li>
+          <li>焼きたては皿もソースもかなり高温なので、猫舌の人は最初のひと口を慎重に。</li>
+          <li>営業時間や定休日は店によって差があるため、訪問前に最新情報を確認することをおすすめします。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ モデルコース ============ -->
+<section id="course" class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">04</span>
+      <h2>モデルコース</h2>
+      <span class="en-label">A Half-day Route</span>
+    </div>
+    <p class="lede">駅を出てから半日程度、海側をぐるっと一周して駅に戻ってくる歩き方の一例です。距離はどれも徒歩10分以内なので、気になった場所で足を止めながら歩くのがちょうどいいペースです。</p>
+
+    <div class="route">
+      <div class="route-item reveal">
+        <div class="route-marker"><span class="dot">1</span></div>
+        <div class="route-body">
+          <span class="time">START</span>
+          <h4>門司港駅舎を見学</h4>
+          <p>まずは駅舎そのものをじっくり見る。天井や柱の木組み、貴賓室の展示まで見ておくと、このあとの洋館めぐりの解像度が上がります。</p>
+        </div>
+      </div>
+      <div class="route-item reveal">
+        <div class="route-marker"><span class="dot">2</span></div>
+        <div class="route-body">
+          <span class="time">+10分</span>
+          <h4>旧大阪商船 → 海峡沿いを歩く</h4>
+          <p>塔屋を見上げてから海沿いのプロムナードへ。潮風にあたりながらブルーウィングもじへ向かいます。</p>
+        </div>
+      </div>
+      <div class="route-item reveal">
+        <div class="route-marker"><span class="dot">3</span></div>
+        <div class="route-body">
+          <span class="time">+15分</span>
+          <h4>ブルーウィングもじを渡る</h4>
+          <p>開閉時刻が合えばここで少し足を止めて見物。合わなければそのまま渡って対岸へ。</p>
+        </div>
+      </div>
+      <div class="route-item reveal">
+        <div class="route-marker"><span class="dot">4</span></div>
+        <div class="route-body">
+          <span class="time">+20分</span>
+          <h4>関門海峡ミュージアムで一休み</h4>
+          <p>屋内でゆっくり歴史をおさらい。屋外の街歩きで疲れた頃にちょうどいいタイミングです。</p>
+        </div>
+      </div>
+      <div class="route-item reveal">
+        <div class="route-marker"><span class="dot">5</span></div>
+        <div class="route-body">
+          <span class="time">+15分</span>
+          <h4>旧門司三井倶楽部・国際友好記念図書館</h4>
+          <p>駅方向に戻りながら洋館を2つ。アインシュタインの記念室は少し時間をとって見る価値ありです。</p>
+        </div>
+      </div>
+      <div class="route-item reveal">
+        <div class="route-marker"><span class="dot">6</span></div>
+        <div class="route-body">
+          <span class="time">GOAL / 夕方</span>
+          <h4>焼きカレーで締めて、展望室で夜景</h4>
+          <p>遅めのランチか早めの夕食で焼きカレー。日没前後に門司港レトロ展望室へ上がると、明かりが灯り始めた港町を一望できます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ アクセス ============ -->
+<section id="access">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">05</span>
+      <h2>アクセス</h2>
+      <span class="en-label">Getting There</span>
+    </div>
+    <div class="access-grid">
+      <div class="access-card">
+        <span class="en-label">By Train</span>
+        <p>JR門司港駅はJR鹿児島本線の終着駅。小倉駅からは普通列車で15分ほどです。福岡市方面からは新幹線で小倉駅まで出て乗り換えるのが基本ルート。</p>
+      </div>
+      <div class="access-card">
+        <span class="en-label">By Car</span>
+        <p>九州自動車道・門司ICから市街地を抜けて向かいます。レトロ地区周辺には有料駐車場があるので、休日は早めの到着が安心です。</p>
+      </div>
+      <div class="access-card">
+        <span class="en-label">On Foot</span>
+        <p>紹介した洋館やブルーウィングもじ、展望室は駅からほぼ徒歩圏内。移動そのものが観光になるくらいの距離感です。</p>
+      </div>
+    </div>
+    <p class="note">※ 施設の営業時間・料金・橋の開閉時刻などは変更されることがあります。訪問前に公式情報でのご確認をおすすめします。</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <h3>結び</h3>
+    <p>
+      門司港は「保存された観光地」というより、今も現役の港町の中に大正・昭和初期の建物が残っている場所だと感じます。
+      洋館だけを見て回るのもいいですが、個人的にはバナナの叩き売りの記念碑のような、少し生活の匂いが残る場所とセットで歩くほうが、
+      この街の厚みが伝わる気がしています。次に行くときは、まだ入ったことのない喫茶店を探しに行くつもりです。
+    </p>
+    <p class="sign">— 個人の感想を交えた、非公式のさんぽ手帖より</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(e){ e.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+
+</body>
+</html>
