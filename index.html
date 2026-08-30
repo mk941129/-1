@@ -345,30 +345,6 @@
   .card-link:hover{ opacity:0.7; }
   .card-link::after{ content:"→"; font-family:"M PLUS Rounded 1c", sans-serif; }
 
-  /* ---------- FOOD ---------- */
-  .food-block{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:clamp(1.8rem,4vw,3rem);
-    align-items:center;
-  }
-  @media (max-width:780px){ .food-block{ grid-template-columns:1fr; } }
-  .food-block svg{ width:100%; max-width:340px; height:auto; margin:0 auto; display:block; }
-  .food-tips{
-    list-style:none; margin:1.2rem 0 0; padding:0;
-    display:grid; gap:0.7rem;
-  }
-  .food-tips li{
-    display:grid; grid-template-columns:1.6rem 1fr; gap:0.6rem;
-    font-size:0.92rem; color:var(--ink-soft);
-  }
-  .food-tips li::before{
-    content:"◆";
-    color:var(--gold);
-    font-size:0.6rem;
-    line-height:2.1;
-  }
-
   .reveal{
     opacity:0; transform:translateY(14px);
     transition:opacity .6s ease, transform .6s ease;
@@ -384,7 +360,6 @@
     <ul class="nav-links">
       <li><a href="#station">駅舎</a></li>
       <li><a href="#spots">みどころ</a></li>
-      <li><a href="#food">食べる</a></li>
       <li><a href="#afterparty">3次会</a></li>
     </ul>
   </div>
@@ -459,7 +434,7 @@
     </div>
   </div>
   <div class="wrap">
-    <p class="lede">駅を出て徒歩10分圏内に、大正〜昭和初期の建物や海峡沿いの施設がまとまっています。順番に迷ったら、まず海側に出て歩くのが個人的なおすすめです。</p>
+    <p class="lede">2人のおすすめ観光地を一挙紹介します!</p>
 
     <div class="spot-grid">
 
@@ -619,49 +594,11 @@
   </div>
 </section>
 
-<!-- ============ 食べる ============ -->
-<section id="food">
-  <div class="section-head-band">
-    <div class="wrap section-head">
-      <span class="num">03</span>
-      <h2>食べる:焼きカレー</h2>
-      <span class="en-label">Baked Curry</span>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="food-block">
-      <svg viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <ellipse cx="150" cy="190" rx="110" ry="26" fill="var(--bg-elevated-2)" stroke="var(--rule)"/>
-        <path d="M60 190 a90 55 0 0 1 180 0" fill="var(--terracotta)" opacity="0.9"/>
-        <path d="M70 186 q80 -34 160 0" fill="none" stroke="var(--gold)" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
-        <path d="M90 178 q60 -22 120 0" fill="none" stroke="var(--gold-soft)" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-        <path d="M55 190 Q150 150 245 190" fill="none" stroke="var(--ink-soft)" stroke-width="1.5" opacity="0.4"/>
-        <g stroke="var(--ink)" stroke-width="2" fill="none" opacity="0.7">
-          <line x1="80" y1="150" x2="80" y2="128"/>
-          <line x1="86" y1="150" x2="88" y2="126"/>
-          <line x1="92" y1="150" x2="96" y2="128"/>
-        </g>
-      </svg>
-      <div>
-        <p>
-          洋食文化が根づいた港町らしく、門司港はご飯にカレーソースをかけてチーズをのせ、オーブンで焼き上げる「焼きカレー」の発祥地とされています。
-          洋食レストランのまかない料理が起源という説もあり、店によって粘度も辛さもチーズの量もかなり違います。
-        </p>
-        <ul class="food-tips">
-          <li>生卵やチーズの絡み方、ご飯の炒め方は店ごとに個性が出るので、1軒で判断せず数軒食べ比べるのが個人的な楽しみ方です。</li>
-          <li>焼きたては皿もソースもかなり高温なので、猫舌の人は最初のひと口を慎重に。</li>
-          <li>営業時間や定休日は店によって差があるため、訪問前に最新情報を確認することをおすすめします。</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ 3次会 ============ -->
 <section id="afterparty" class="band">
   <div class="section-head-band">
     <div class="wrap section-head">
-      <span class="num">04</span>
+      <span class="num">03</span>
       <h2>3次会のおすすめ</h2>
       <span class="en-label">After the Party</span>
     </div>
