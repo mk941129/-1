@@ -19,6 +19,8 @@
     --gold:#a3814a;
     --gold-soft:#c9ac74;
     --terracotta:#6b4a2c;
+    --heading-bg:#52684d;
+    --heading-fg:#f6efdf;
     --rule: rgba(50,43,31,0.22);
     --shadow: rgba(40,32,20,0.18);
     color-scheme: light;
@@ -34,6 +36,8 @@
       --gold:#dcb772;
       --gold-soft:#ecd39a;
       --terracotta:#b98a5e;
+      --heading-bg:#3f5239;
+      --heading-fg:#ece0c7;
       --rule: rgba(220,183,114,0.25);
       --shadow: rgba(0,0,0,0.5);
       color-scheme: dark;
@@ -49,6 +53,8 @@
     --gold:#dcb772;
     --gold-soft:#ecd39a;
     --terracotta:#b98a5e;
+    --heading-bg:#3f5239;
+    --heading-fg:#ece0c7;
     --rule: rgba(220,183,114,0.25);
     --shadow: rgba(0,0,0,0.5);
     color-scheme: dark;
@@ -150,7 +156,7 @@
   /* ---------- SECTION SHELL ---------- */
   section{ padding:clamp(3.4rem,7vw,5.5rem) 0; }
   .section-head{
-    display:flex; align-items:baseline; gap:1rem;
+    display:flex; align-items:center; gap:1rem;
     margin-bottom:2.4rem;
     border-bottom:1px solid var(--rule);
     padding-bottom:1.1rem;
@@ -161,7 +167,13 @@
     color:var(--gold);
     font-size:1.4rem;
   }
-  .section-head h2{ font-size:clamp(1.5rem,3vw,1.9rem); }
+  .section-head h2{
+    font-size:clamp(1.5rem,3vw,1.9rem);
+    background:var(--heading-bg);
+    color:var(--heading-fg);
+    padding:0.3em 0.7em;
+    border-radius:8px;
+  }
   .section-head .en-label{ margin-left:auto; }
 
   .lede{
@@ -359,7 +371,7 @@
 <section id="greeting" class="band">
   <div class="wrap">
     <div class="section-head">
-      <span class="num">00</span>
+      <span class="num">01</span>
       <h2>ご挨拶</h2>
       <span class="en-label">A Note from the Couple</span>
     </div>
@@ -382,7 +394,7 @@
 <section id="station">
   <div class="wrap">
     <div class="section-head">
-      <span class="num">01</span>
+      <span class="num">02</span>
       <h2>駅舎の話</h2>
       <span class="en-label">Mojiko Station</span>
     </div>
@@ -413,7 +425,7 @@
 <section id="spots" class="band">
   <div class="wrap">
     <div class="section-head">
-      <span class="num">02</span>
+      <span class="num">03</span>
       <h2>まわりのみどころ</h2>
       <span class="en-label">Around the Port</span>
     </div>
@@ -581,7 +593,7 @@
 <section id="food">
   <div class="wrap">
     <div class="section-head">
-      <span class="num">03</span>
+      <span class="num">04</span>
       <h2>食べる:焼きカレー</h2>
       <span class="en-label">Baked Curry</span>
     </div>
@@ -617,11 +629,11 @@
 <section id="afterparty" class="band">
   <div class="wrap">
     <div class="section-head">
-      <span class="num">04</span>
+      <span class="num">05</span>
       <h2>3次会のおすすめ</h2>
       <span class="en-label">After the Party</span>
     </div>
-    <p class="lede">披露宴のあと、有志でもう少し話し足りない人のために。門司港レトロ地区で夜も営業しているお店を3つ紹介します。店名・営業時間などの詳細は下のリンクから公式サイトでご確認ください。</p>
+    <p class="lede">「日の当たる場所」での2次会は18時半くらいに終了する予定です。まだ飲み足りない人たちのために、門司港レトロ地区で夜も営業しているお店を3つ紹介します。店名・営業時間などの詳細は公式サイトのリンクを貼ってあるので、そこからご確認ください。<br><br>門司港の名物と言えば、焼きカレーですよね。以下に紹介したお店ではどこでも食べられるので、ぜひ食べてみてください!</p>
 
     <div class="spot-grid">
 
