@@ -332,6 +332,21 @@
   }
   .card p{ margin:0; font-size:0.92rem; color:var(--ink-soft); }
   .card .opine{ margin-top:auto; padding-top:0.9rem; }
+  .card-link{
+    display:inline-flex;
+    align-items:center;
+    gap:0.35em;
+    margin-top:0.9rem;
+    font-size:0.86rem;
+    text-decoration:none;
+    color:var(--green);
+    border-bottom:1px solid var(--gold);
+    padding-bottom:0.1em;
+    align-self:flex-start;
+    transition:opacity .2s ease;
+  }
+  .card-link:hover{ opacity:0.7; }
+  .card-link::after{ content:"→"; font-family:"Cormorant Garamond", serif; }
 
   /* ---------- FOOD ---------- */
   .food-block{
@@ -374,6 +389,7 @@
       <li><a href="#station">駅舎</a></li>
       <li><a href="#spots">みどころ</a></li>
       <li><a href="#food">食べる</a></li>
+      <li><a href="#afterparty">3次会</a></li>
     </ul>
   </div>
 </nav>
@@ -648,6 +664,56 @@
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ 3次会 ============ -->
+<section id="afterparty" class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">04</span>
+      <h2>3次会のおすすめ</h2>
+      <span class="en-label">After the Party</span>
+    </div>
+    <p class="lede">披露宴のあと、有志でもう少し話し足りない人のために。門司港レトロ地区で夜も営業しているお店を3つ紹介します。店名・営業時間などの詳細は下のリンクから公式サイトでご確認ください。</p>
+
+    <div class="spot-grid">
+
+      <article class="card reveal">
+        <div class="card-photo">
+          <img src="images/spot-mojibeer.svg" alt="サンプル画像:あとでMOJI BEERの写真に差し替えます" loading="lazy">
+        </div>
+        <h3>MOJI BEER</h3>
+        <span class="era">仮記載 &middot; 公式サイトの情報をご確認ください</span>
+        <p>門司港エリアで営業しているお店です。詳しい業態や特徴は公式サイトからご確認いただき、紹介文はあとで正式なものに差し替えます。</p>
+        <a class="card-link" href="https://mojibeer.ntf.ne.jp/" target="_blank" rel="noopener noreferrer">公式サイトを見る</a>
+        <div class="opine"><span class="tag">メモ</span>ここに来店エピソードやおすすめコメントをあとから追加してください。</div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-photo">
+          <img src="images/spot-craftbeerhall.svg" alt="サンプル画像:あとでクラフトビアホール門司港の写真に差し替えます" loading="lazy">
+        </div>
+        <h3>クラフトビアホール門司港</h3>
+        <span class="era">仮記載 &middot; 公式サイトの情報をご確認ください</span>
+        <p>クラフトビールを楽しめるお店のようです。詳しい業態や特徴は公式サイトからご確認いただき、紹介文はあとで正式なものに差し替えます。</p>
+        <a class="card-link" href="https://bearfruits.jp/craftbeerhallmojiko" target="_blank" rel="noopener noreferrer">公式サイトを見る</a>
+        <div class="opine"><span class="tag">メモ</span>ここに来店エピソードやおすすめコメントをあとから追加してください。</div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-photo">
+          <img src="images/spot-rokuyoukan.svg" alt="サンプル画像:あとで六曜館GIGの写真に差し替えます" loading="lazy">
+        </div>
+        <h3>六曜館 GIG</h3>
+        <span class="era">仮記載 &middot; 公式サイトの情報をご確認ください</span>
+        <p>門司港エリアで営業しているお店です。詳しい業態や特徴は公式サイトからご確認いただき、紹介文はあとで正式なものに差し替えます。</p>
+        <a class="card-link" href="https://rokuyoukan-gig.jimdofree.com/" target="_blank" rel="noopener noreferrer">公式サイトを見る</a>
+        <div class="opine"><span class="tag">メモ</span>ここに来店エピソードやおすすめコメントをあとから追加してください。</div>
+      </article>
+
+    </div>
+    <p class="placeholder-note">※ 3店舗とも店名・紹介文は仮のものです。内容をご確認のうえ、正式な情報に差し替えてください。</p>
   </div>
 </section>
 
