@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>門司港レトロさんぽ手帖</title>
-<meta name="description" content="門司港駅とその周辺を、駅舎の見どころから焼きカレー、モデルコースまで、個人の感想を交えて紹介する観光案内ページ。">
+<title>2人が独断と偏見で作った門司港レトロ案内</title>
+<meta name="description" content="結婚式ゲスト向けに、門司港駅とその周辺の見どころ・グルメ・3次会のお店を、2人の個人的な感想を交えて紹介する案内ページ。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
@@ -112,15 +112,19 @@
   }
   .site-nav .wrap{
     display:flex; align-items:center; justify-content:space-between;
-    height:64px;
+    flex-wrap:wrap;
+    gap:0.4rem 1.5rem;
+    min-height:64px;
+    padding-top:0.6rem; padding-bottom:0.6rem;
     max-width:1040px;
   }
   .brand{
     font-family:"Shippori Mincho", serif;
     font-weight:700;
-    font-size:1.05rem;
-    letter-spacing:0.05em;
-    white-space:nowrap;
+    font-size:0.98rem;
+    line-height:1.4;
+    letter-spacing:0.03em;
+    max-width:22em;
   }
   .brand small{
     display:block;
@@ -149,55 +153,6 @@
     transition:color .2s ease, border-color .2s ease;
   }
   .nav-links a:hover{ color:var(--green); border-color:var(--gold);}
-
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative;
-    padding:clamp(3rem,8vw,5.5rem) 0 0;
-    overflow:hidden;
-  }
-  .hero .wrap{
-    display:grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap:2rem;
-    align-items:center;
-  }
-  @media (max-width: 780px){
-    .hero .wrap{ grid-template-columns:1fr; }
-  }
-  .hero-eyebrow{
-    display:flex; align-items:center; gap:0.75rem;
-    margin-bottom:1.1rem;
-  }
-  .hero-eyebrow .line{ width:2.4rem; height:1px; background:var(--gold); }
-  .hero h1{
-    font-size:clamp(2.1rem, 5vw, 3.1rem);
-    line-height:1.35;
-    margin-bottom:1.1rem;
-  }
-  .hero h1 em{
-    font-style:normal;
-    color:var(--green);
-    display:block;
-    font-size:0.55em;
-    letter-spacing:0.08em;
-    margin-top:0.4rem;
-  }
-  .hero p.lead{
-    color:var(--ink-soft);
-    font-size:1.02rem;
-    max-width:34em;
-  }
-  .hero-figure{ position:relative; }
-  .hero-figure svg{ width:100%; height:auto; display:block; }
-
-  .scallop{
-    height:14px;
-    width:100%;
-    background-image: radial-gradient(circle at 7px 0, transparent 7px, var(--bg-elevated) 7.5px);
-    background-size:14px 14px;
-    background-position: 0 -7px;
-  }
 
   /* ---------- SECTION SHELL ---------- */
   section{ padding:clamp(3.4rem,7vw,5.5rem) 0; }
@@ -260,7 +215,7 @@
     box-shadow:0 10px 24px -18px var(--shadow);
   }
   .host-photo img{ width:100%; height:auto; display:block; }
-  .placeholder-text{
+  .host-text p{
     color:var(--ink-soft);
     font-size:0.98rem;
   }
@@ -383,7 +338,7 @@
 
 <nav class="site-nav">
   <div class="wrap">
-    <div class="brand">門司港レトロさんぽ手帖<small>Mojiko Port, Kitakyushu</small></div>
+    <div class="brand">2人が独断と偏見で作った門司港レトロ案内<small>Mojiko Port, Kitakyushu</small></div>
     <ul class="nav-links">
       <li><a href="#greeting">ご挨拶</a></li>
       <li><a href="#station">駅舎</a></li>
@@ -393,68 +348,6 @@
     </ul>
   </div>
 </nav>
-
-<header class="hero">
-  <div class="wrap">
-    <div class="hero-copy">
-      <div class="hero-eyebrow"><span class="line"></span><span class="en-label">Our Wedding &middot; Nov 1, 2026</span></div>
-      <h1>結婚式の前後に、<br>少しだけ寄り道を。<em>門司港レトロさんぽ手帖</em></h1>
-      <p class="lead">
-        2026年11月1日、私たちは門司港で結婚式を挙げます。この街まで来てくださるゲストの皆さんに、
-        式の前後の空き時間で少しでも門司港を楽しんでもらえたらと思い、このページを作りました。
-        観光ガイドというより、個人的な「お気に入りメモ」だと思って読んでください。
-      </p>
-    </div>
-    <div class="hero-figure" aria-hidden="true">
-      <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="門司港駅舎のイラスト">
-        <defs>
-          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="var(--navy)" stop-opacity="0.15"/>
-            <stop offset="1" stop-color="var(--navy)" stop-opacity="0"/>
-          </linearGradient>
-        </defs>
-        <rect x="0" y="0" width="480" height="230" fill="url(#skyGrad)"/>
-        <!-- gulls -->
-        <path d="M60 55 q8 -10 16 0 q8 -10 16 0" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-        <path d="M370 40 q7 -9 14 0 q7 -9 14 0" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-        <!-- station facade -->
-        <g stroke="var(--green)" stroke-width="2.4" fill="none" stroke-linejoin="round">
-          <rect x="70" y="150" width="340" height="110" fill="var(--bg-elevated)"/>
-          <rect x="70" y="150" width="340" height="14" fill="none"/>
-          <polygon points="205,105 275,105 292,150 188,150" fill="var(--bg-elevated)"/>
-          <line x1="205" y1="105" x2="275" y2="105"/>
-          <!-- columns -->
-          <line x1="120" y1="160" x2="120" y2="250"/>
-          <line x1="150" y1="160" x2="150" y2="250"/>
-          <line x1="330" y1="160" x2="330" y2="250"/>
-          <line x1="360" y1="160" x2="360" y2="250"/>
-          <!-- central arch -->
-          <path d="M215 250 v-45 a25 25 0 0 1 50 0 v45" fill="var(--bg)"/>
-          <!-- windows -->
-          <rect x="95" y="185" width="20" height="34" fill="var(--bg)"/>
-          <rect x="365" y="185" width="20" height="34" fill="var(--bg)"/>
-          <rect x="170" y="185" width="18" height="30" fill="var(--bg)"/>
-          <rect x="292" y="185" width="18" height="30" fill="var(--bg)"/>
-          <!-- roof line accents -->
-          <line x1="70" y1="150" x2="188" y2="150"/>
-          <line x1="292" y1="150" x2="410" y2="150"/>
-        </g>
-        <g fill="var(--terracotta)" opacity="0.85">
-          <rect x="70" y="146" width="340" height="4"/>
-          <polygon points="205,105 275,105 279,111 201,111"/>
-        </g>
-        <!-- clock -->
-        <circle cx="240" cy="128" r="9" fill="var(--bg-elevated)" stroke="var(--gold)" stroke-width="2"/>
-        <line x1="240" y1="128" x2="240" y2="122" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round"/>
-        <line x1="240" y1="128" x2="244" y2="128" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round"/>
-        <!-- ground / strait -->
-        <path d="M0 300 Q 60 285 120 300 T 240 300 T 360 300 T 480 300 V360 H0 Z" fill="var(--navy)" opacity="0.85"/>
-        <path d="M0 315 Q 60 302 120 315 T 240 315 T 360 315 T 480 315 V360 H0 Z" fill="var(--navy)" opacity="0.55"/>
-        <path d="M40 262 h400" stroke="var(--rule)" stroke-width="1"/>
-      </svg>
-    </div>
-  </div>
-</header>
 
 <main>
 
@@ -468,14 +361,14 @@
     </div>
     <div class="host-intro reveal">
       <figure class="host-photo">
-        <img src="images/host-photo.svg" alt="サンプル画像:あとで二人のバストアップ写真に差し替えます" width="320" height="400">
+        <img src="images/host-photo.jpg" alt="2人のスナップ写真" width="320" height="400">
       </figure>
       <div class="host-text">
-        <p class="placeholder-text">
-          ここにゲストの皆さんへの挨拶文が入ります。当日までの気持ちや、門司港という街を選んだ理由、
-          この手帖を作った経緯などを、写真とあわせてあとから書き加える予定です。
+        <p>
+          この度は私たち2人の結婚式にご参加いただきありがとうございます。門司港レトロはたくさん見どころのある観光地です。
+          また、交際当初の12年前に2人で遊んだ思い出の場所でもあります。ぜひ結婚式前後の空き時間に楽しんでもらえたらと思い、
+          この案内を作りました。ぜひ参考にしてください!
         </p>
-        <p class="placeholder-note">※ 上の写真とこの文章はサンプルです。後日、実際の写真と挨拶文に差し替えます。</p>
       </div>
     </div>
   </div>
@@ -511,19 +404,12 @@
       </figure>
       <div>
         <p>
-          門司港駅は1914年(大正3年)開業。左右対称に伸びる白い外壁とネオ・ルネサンス様式の意匠を持つ木造二階建ての駅舎で、
-          1988年に鉄道駅としては全国で初めて国の重要文化財に指定されました。2012年から始まった保存修理工事は2019年に完了し、
-          創建当時に近い姿へと復原されています。
+          本日披露宴会場でもある門司港駅舎。1914年(大正3年)に開業したそうです。左右対称に伸びる白い外壁とネオ・ルネサンス様式の意匠を持つ木造二階建ての駅舎で、
+          1988年に鉄道駅としては全国で初めて国の重要文化財に指定されました。2012年〜2019年に大規模な修繕工事が施され、
+          創建当時に近い姿へと復原されています。披露宴会場の部屋は当時「みかど食堂」という高級レストランだったそうです。
+          トイレのドアノブが少し低い位置についていますが、これは使用人が頭を下げながらドアを開閉するためだと、ここのスタッフさんが言ってました(笑)。
         </p>
-        <p>
-          駅舎内には「幸福の泉」と呼ばれる噴水や、大正期の意匠を残す洗面所、旧貴賓室なども残されていて、
-          ただの通過駅ではなく、それ自体が展示物のような場所になっています。
-        </p>
-        <div class="opine">
-          <span class="tag">私見</span>個人的に一番好きなのは、改札を出てすぐ振り返ったときの、木の質感が残る天井と柱の組み方です。
-          写真だと平面的な「白い洋館」に見えがちですが、実際に建物の中に立つと、木造ならではの温度みたいなものを感じます。
-          正直、ヨーロッパの駅を真似た建物というより、日本の大工が「洋風建築をどう解釈したか」の記録として見るほうがおもしろいと思っています。
-        </div>
+        <p>黒木の中学校の夏休みの宿題の表紙が門司港駅でした。</p>
         <ul class="facts">
           <li><b>開業</b><span>1914年(大正3年)</span></li>
           <li><b>文化財指定</b><span>1988年、駅舎として全国初の国指定重要文化財</span></li>
